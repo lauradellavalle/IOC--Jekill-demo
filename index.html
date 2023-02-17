@@ -1,5 +1,49 @@
 ---
 layout: default
 title: Homepage
+news:
+ - title: Big sale
+   description: Exciting things are happening
+   date: 13th Jan
+   category: promo
+   url: http://www.lauradellavalle.com
+ - title: Sale
+   description: ciao ciao
+   date: 14th Feb
+   category: feb
+   url: http://www.lauradellavalle.com
+ - title: Big sale
+   description: hello hello
+   date: 15th March
+   category: march
+   url: http://www.lauradellavalle.com
+ - title: Banana
+   description: BA NA NA
+   date: 16th April
+   category: banana
+   url: http://www.lauradellavalle.com
 ---
-<h1>Welcome to your homepage!</h1>
+
+<section class="padded bg-featured grid-spaceBetween latest-news">
+      
+        {% for item in page.news %}
+
+      <!-- First Card   -->
+      <div class="col-4_xs-8">
+        <div class="card">
+          <div class="bg-image">
+            <span> {{item.category}} </span>  
+          </div> 
+          <div class="post-info"> 
+            <p class="date"> {{item.date}} </p> 
+            <h3> {{item.title}} </h3> 
+            <p> {{item.description}} </p> 
+            <a href="{{item.url}}"> Find out more &nbsp; &#10141;</a>
+          </div>
+        </div>
+      </div> 
+
+        {% endfor %}
+      
+    
+  </section> 
